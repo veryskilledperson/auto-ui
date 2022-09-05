@@ -1,0 +1,19 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "Autoclicker", Text = "Click F"})
+local Key = Enum.KeyCode.F
+
+
+game:GetService("UserInputService").InputBegan:Connect(function(k,g)
+  if not g and k.KeyCode == Key then
+    AC = not AC
+  end
+end)
+
+while wait() do
+  if AC then
+     pcall(function()
+       local Sword = game:GetService'Players'.LocalPlayer.Character:FindFirstChildOfClass'Tool'
+Sword:Activate()
+ Sword:Activate()
+            end)
+  end
+end
